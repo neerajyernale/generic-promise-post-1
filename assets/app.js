@@ -159,7 +159,12 @@ function onRemove(ele){
     makeApiCall('DELETE',removeUrl)
     .then(res=>{
         cl(res);
-        document.getElementById(removeId).remove()
+        document.getElementById(removeId).remove();
+        Swal.fire({
+    title: "Deleted!",
+    text: "The user has been deleted.",
+    icon: "success"
+  });
     })
     .catch(err =>{
         snackbar(err);
